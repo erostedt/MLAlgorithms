@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from MLAlgorithms.utils import random_colour
 
 
 class KMeans:
@@ -40,9 +41,9 @@ class KMeans:
 		return np.argmin(distances, axis=1)
 
 	def plot_clusters(self):
-		colours = ['r', 'b', 'g'] # ADD MORE HERE
 		_, ax = plt.subplot()
-		for idx, center, cluster, colour in enumerate(zip(self.centers, self.clusters, colours)):
+		for idx, center, cluster in enumerate(zip(self.centers, self.clusters)):
+			colour = random_colour()
 			ax.scatter(center[0], center[1], c=colour, s=50, marker='*')
 			ax.scatter(cluster[:, 0], cluster[:, 1], c=colour, label=f'Cluster: {idx}')
 

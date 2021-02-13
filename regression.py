@@ -1,12 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-
-# Lägg i utils
-
-def points_to_vectors(points):
-	return tuple(zip(*points))
+from MLAlgorithms.utils import points_to_vectors
 
 
 class PolinomialRegression:
